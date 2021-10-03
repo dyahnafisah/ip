@@ -1,37 +1,136 @@
-## Welcome to GitHub Pages
+# User Guide
 
-You can use the [editor on GitHub](https://github.com/dyahnafisah/ip/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Features 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Add Tasks
 
-### Markdown
+Allows user to add different type of tasks to the list.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Mark Tasks as Done
 
-```markdown
-Syntax highlighted code block
+Allows user to mark tasks as completed.
 
-# Header 1
-## Header 2
-### Header 3
+### Delete Tasks
 
-- Bulleted
-- List
+Allows user to remove tasks from the list.
 
-1. Numbered
-2. List
+### Search for Tasks
 
-**Bold** and _Italic_ and `Code` text
+Allows user to search for some specific tasks within the list using a keyword.
 
-[Link](url) and ![Image](src)
+### Data Storage
+
+Allows the user to read and store the tasks from and to the directory `data/duke.txt`.
+
+## Usage
+
+### `todo` - Add ToDo
+
+Add ToDo type of task to the list and display a completion message.
+
+Example of usage: 
+
+`todo workout`
+
+Expected outcome:
+
+```
+Ok, I've added this task:
+[T][ ] workout
+Now you have 6 tasks in the list. Anything else?
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### `deadline` - Add Deadline
 
-### Jekyll Themes
+Add Deadline type of task with the date of format `yyyy-MM-dd` to the list and display a completion message with a date of format `MMM d yyyy`.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dyahnafisah/ip/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Example of usage:
 
-### Support or Contact
+`deadline finish ip /by 2021-10-01`
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Expected outcome:
+
+```
+Ok, I've added this task:
+[D][ ] finish ip /by Oct 1 2021
+Now you have 7 tasks in the list. Anything else?
+```
+
+### `event` - Add Event
+
+Add Event type of task with the date of format `yyyy-MM-dd` to the list and display a completion message with a date of format `MMM d yyyy`.
+
+Example of usage:
+
+`event attend meeting /at 2021-10-03`
+
+Expected outcome:
+
+```
+Ok, I've added this task:
+[E][ ] attend meeting /at Oct 3 2021
+Now you have 8 tasks in the list. Anything else?
+```
+
+### `list` - Display Tasks
+
+Print all the tasks in the list.
+
+Example of usage:
+
+`list`
+
+Expected outcome:
+
+```
+  1.[T][X] read book
+  2.[D][ ] return book /by Jun 1 2021
+  3.[E][ ] project meeting /at Aug 6 2021
+  4.[T][X] join sports club
+```
+
+### `done` - Mark Task as Done
+
+Mark completed task as done using the number of the respective task in the list.
+
+Example of usage:
+
+`done 2`
+
+Expected outcome:
+
+```
+Congratulations! You have completed the task: [D][X] return book /by Jun 1 2021
+```
+
+### `delete` - Delete Task
+
+Remove task from the list using the number of the respective task in the list.
+
+Example of usage:
+
+`delete 7`
+
+Expected outcome:
+
+```
+Noted. I've removed this task:
+[D][ ] finish ip /by Oct 1 2021
+Now you have 7 tasks in the list. Anything else?
+```
+
+### `find` - Find Tasks
+
+Find some tasks in the list that contain a keyword.
+
+Example of usage:
+
+`find book`
+
+Expected outcome:
+
+```
+Here are the matching tasks in your list:
+1.[T][X] read book
+2.[D][X] return book /by Jun 1 2021
+```
